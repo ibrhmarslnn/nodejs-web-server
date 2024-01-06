@@ -1,21 +1,11 @@
 var express = require("express");
+var middleware = require("./middleware");
 var app = express();
 var PORT = 3000;
 
-var middleware = {
-    requireAuthentication: function (req, res, next) {//next callback functiondır.next çağrılırsa expree anlayacak ki ileri gidebilirim.next olmazsa function yani sayfa çalışmayacak.
-        console.log("Özel route girildi!!!");
-        next();
-    },
-    logger: function (req, res, next) {//girilen metodun ismini ve url ini dönecek.
-        console.log(req.method + " " + req.originalUrl);
-        next();
-    }
-}
+app.use(middleware.logger);
 
-app.use(middleware.logger);//application seviyesi.
-
-app.get("/hakkimda", middleware.requireAuthentication, function (req, res) {//route bazında middleware. sadece bu sayfada çalışır.
+app.get("/hakkimda", middleware.requireAuthentication, function (req, res) {
     res.send("Hakkımda sayfası!!!");
 })
 
