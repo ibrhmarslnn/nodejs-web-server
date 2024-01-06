@@ -9,4 +9,4 @@ var middleware = {
     }
 }
 
-module.exports = middleware;
+module.exports = middleware;//önceden funciton gönderiyoduk. şimdi yukardaki objeyi gönderdik.
