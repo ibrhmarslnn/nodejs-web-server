@@ -1,7 +1,7 @@
 var express = require("express");
 var middleware = require("./middleware");
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;//heroku için bu şekilde olması gerek. eğer yoksa 3000 i kullanacak. ilk kısım heroku sunucusu ikincisi bizim lokalimiz.
 
 app.use(middleware.logger);
 
