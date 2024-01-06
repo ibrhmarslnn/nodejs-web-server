@@ -1,0 +1,7 @@
+git config --global user.name "ibrhmarslnn"
+git config --global user.email "aarslanibo@gmail.com"
+git config --global push.default matching
+git config --global alias.co checkout
+git init --> giti başaltır.
+git status --> yeni eklenmiş veya değişmiş dosyaları gösterir.
+git add . --> herşeyi gite ekler.
